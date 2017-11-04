@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
 *{
 	background: #000000;
 	color: #00D100;
 	margin: 0;
 	border: none;
+	font-family: 'Press Start 2P';
+	font-size: 20px;
 }
 *:focus{
 	outline: none;
@@ -12,7 +16,7 @@ html, body, #input, #display{
 	height: 100%;
 }
 #input{
-	height: 30px;
+	height: 50px;
 	position: absolute;
 	bottom: 0;
 	border-top: 1px solid #00D100;

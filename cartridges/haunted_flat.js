@@ -20,17 +20,17 @@ var gameData = {
 				note : { look : 'Written in an untidy scroll the note reads "Generator blew. Lights out."' }
 			},
 			items : {
-				socks : {
-					displayName : 'Miner Helmet',
-					description : 'A trusty old miner helmet covered in minor dents. Still seems sturdy and the light works.',
-					use : function(){return useLightSource();},
+				mirror : {
+					displayName : 'Mirror',
+					description : 'A large, floor length mirror that you can just about make out in the dim light.',
+					use : function(){return meetTheStranger();},
 					quantity : 1,
 					hidden : true
 				}
 			},
 			exits : {
 				hallway : {
-					displayName : 'Hallway',
+					displayName : 'the door to the hallway',
 					destination : 'Hallway'
 				}
 			},
