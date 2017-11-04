@@ -40,7 +40,7 @@ Then in the text box you'll see in your browser:
 load haunted_flat
 ```
 
-You are Stepa Likhodeyev, manager of the Variety Theatre, and you are just waking up from a terrible hangover. The flat you share on Sadovaya Street, Moscow, has a curious reputation: its occupants tend to inexplicably vanish. You really ought to get out of bed, although first you should probably put on some trousers. 
+![intro](https://github.com/wemmm/the-haunted-flat/blob/master/intro.png)
 
 ## Tech:
 

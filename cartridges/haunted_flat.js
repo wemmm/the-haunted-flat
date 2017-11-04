@@ -2,7 +2,7 @@
 var gameData = {
 	commandCounter : 0,
 	gameOver : false,
-	introText : 'You are Stepa Likhodeyev, manager of the Variety Theatre, and you are just waking up from a terrible hangover. The flat you share on Sadovaya Street, Moscow, has a curious reputation: its occupants tend to inexplicably vanish. You really ought to get out of bed, although first you should probably put on some trousers.',
+	introText : 'You are Stepa Likhodeyev, manager of the Variety Theatre, and you are just waking up from a terrible hangover. The flat you share on Sadovaya Street, Moscow, has a curious reputation: its occupants tend to inexplicably vanish. You really ought to get out of bed and find some aspirin, although first you should probably put on some trousers.',
 	outroText : 'Thanks For playing!',
 	player : {
 		currentLocation : 'Bedroom',
