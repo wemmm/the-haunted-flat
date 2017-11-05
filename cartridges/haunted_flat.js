@@ -2,27 +2,27 @@
 var gameData = {
 	commandCounter : 0,
 	gameOver : false,
-	introText : 'You are Stepa Likhodeyev, manager of the Variety Theatre, and you are just waking up from a terrible hangover. The flat you share on Sadovaya Street, Moscow, has a curious reputation: its occupants tend to inexplicably vanish. You really ought to get out of bed and find some aspirin, although first you should probably put on some trousers.',
-	outroText : 'Thanks For playing!',
+	introText : '\nYou are Stepa Likhodeyev, manager of the Variety Theatre, and you are just waking up from a terrible hangover. The flat you share on Sadovaya Street, Moscow, has a curious reputation: its occupants tend to inexplicably vanish. \n\nYou really ought to get out of bed and find some aspirin, although first you should probably put on some trousers.\n\n',
+	outroText : 'Thanks for playing!',
 	player : {
 		currentLocation : 'Bedroom',
 		inventory : {},
-		lightSource : false
+		metStranger : false
 	},
 	map : {
 		'Bedroom' : {
 			firstVisit : true,
 			displayName : 'Your bedroom',
-			description : 'You are lying horizontally across your bed, and the room is dark. ',
+			description : 'You are lying horizontally across your bed, and the room is dark. It\'s hard to see, but what little light there is glints on the surface of a small mirror on the nightstand next to you.',
 			interactables : {
 				bed : { look : 'You really don\'t want to get up. To say that you\'re feeling rough is an understatement.' },
-				mirror : { look : 'The sign reads "Crooked Gulch Gold Mine" and has a note tacked to the bottom of it.' },
-				note : { look : 'Written in an untidy scroll the note reads "Generator blew. Lights out."' }
+        nightstand : { look : 'A small table with a lamp and a mirror standing on it.' },
+        self : { look : 'You mentally give yourself a once over. Your head is pounding, your eyes hurt, and you appear to have mislaid your trousers.' },
 			},
 			items : {
 				mirror : {
 					displayName : 'Mirror',
-					description : 'A large, floor length mirror that you can just about make out in the dim light.',
+					description : 'A small mirror, just about visible in the gloom.',
 					use : function(){return meetTheStranger();},
 					quantity : 1,
 					hidden : true
@@ -66,3 +66,9 @@ var gameActions = {
 // === Necessary Exports ===
 module.exports.gameData = gameData;
 module.exports.gameActions = gameActions;
+
+// === Helper Functions ===
+function meetTheStranger(){
+	gameData.player.metStranger = true;
+	return 'You\'re not the only person you can see in the mirror.'
+}
