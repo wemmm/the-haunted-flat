@@ -1,5 +1,5 @@
 // === Debug Variable ===
-var debugMode = false;
+var debugMode = true;
 
 // === Import Necessary Functionality ===
 var fileSystem = require('fs');
@@ -229,7 +229,7 @@ function checkForGameEnd(game, returnString){
 	if(game.gameOver){
 	returnString = returnString + '\n' + game.outroText;
 		actions.die(game,{action:'die'});
-	} 
+	}
 	return returnString;
 }
 
