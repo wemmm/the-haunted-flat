@@ -104,7 +104,11 @@ var actions = {
 
 	die : function(game, command){
 		delete games[game.gameID];
-		return {message:'You are dead', success: true};
+		return {message:'You are dead.', success: true};
+	},
+
+	help : function(game, command){
+		return {message:'Here\'s a handy list of verbs that this game likes:\n- Drop [item]\n- Go [destination]\n- Inventory\n- Look (at) [thing]\n- Take [item]\n- Use [item]\n- Talk (to) [thing]', success: true};
 	},
 
 	drop : function(game, command){

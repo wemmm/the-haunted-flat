@@ -39,7 +39,7 @@ var gameData = {
         photo : { look : '\nA photograph of your wife. Your wife, along with Berlioz\'s, disappeared not even a month into your tenancy here, although not without trace.\n' },
         stranger : {
 					look : '\nA well-groomed man in a black suit, paired with a black beret. You don\'t know him and you don\'t know how he got in here.\n',
-					talk : '\n PLACEHOLDER\n'
+					talk : '\n\"Good morning, my dear Stepan Bogdanovich!\"\n'
 				 }
 			},
 			exits : {
