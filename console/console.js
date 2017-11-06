@@ -218,6 +218,26 @@ var actions = {
 		} catch (itemNotInInventoryError) {
 			return {message: 'Can\'t do that.', success: false};
 		}
+	},
+
+	talk : function(game, command){
+		if(!command.subject){
+			return {message: 'Talk to whom?', success: false};
+		}
+		try {
+			try {
+				return {message: getItem(game.player.inventory, command.subject).description, success: true};
+			} catch (itemNotInInventoryError){
+				return {message: getItem(getCurrentLocation(game).items, command.subject).description, success: true};
+			}
+		} catch(isNotAnItemError) {
+			try {
+				return {message: interact(game, 'talk', command.subject), success: true};
+			} catch(subjectNotFound
+				) {
+				return {message: 'The '+command.subject+' does not seem to have anything to say.', success: false};
+			}
+		}
 	}
 };
 
