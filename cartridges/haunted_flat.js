@@ -61,13 +61,13 @@ var gameData = {
 		'Table' : {
 			firstVisit : true,
 			displayName : 'Table',
-			description : '\nYou are sitting at a small table with the stranger.\n',
+			description : '\nYou are sitting at a small table with the stranger. You evidently have matters to TALK about.\n',
 			updateLocation : function(){brunchConvo();},
 			interactables : {
 				table : { look : '\nA small table with two chairs, which you and the stranger now occupy.\n' },
 				stranger : {
 					look : '\nA well-groomed man in a black suit, paired with a black beret. It seems likely that you met him during last night\'s drunken escapades, and you seem to have gone as far as to arrange a meeting with him for as yet unknown reasons.\n',
-					talk: 'If you can see this then something has gone drastically wrong.'
+					talk: 'If you can see this then you have neither drank nor not drank the vodka, which is impossible. Congratulations!.'
 				}
 			},
 			items : {
@@ -138,15 +138,10 @@ module.exports.gameData = gameData;
 module.exports.gameActions = gameActions;
 
 // === Helper Functions ===
-function eatFood(){
-	gameData.player.ateFood = true;
-	return 'You eat the food.'
-}
-
 function brunchConvo(){
 	if(gameData.player.drankVodka){
 		gameData.map['Table'].interactables.stranger.talk = 'So here\'s the next thing [PLACEHOLDER]';
 	} else {
-		gameData.map['Table'].interactables.stranger.talk = '\"Drink the vodka, Stepan!\"';
+		gameData.map['Table'].interactables.stranger.talk = '\nYou ask the stranger if he intends to dine with you.\n\n\"I never eat when I\'m drinking,\", he says, and pours out two glasses of vodka from the decanter.\"Have you remembered my name yet?\"\n\nYou can only grin sheepishly and shrug your shoulders. Some dim memories, including attempting to kiss a woman who worked for the radio, and going to the dacha, have returned to you, but they seem uninteresting in comparison to the situation you\'re currently in.\n\nThe stranger pushes a glass towards you. \"Better DRINK some VODKA, Stepan!\"\n';
 	}
 }
