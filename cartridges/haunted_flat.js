@@ -7,7 +7,8 @@ var gameData = {
 	player : {
 		currentLocation : 'Bedroom',
 		inventory : {},
-		metStranger : false
+		ateFood : false,
+		drankVodka : false
 	},
 	map : {
 		'Bedroom' : {
@@ -61,15 +62,20 @@ var gameData = {
 			firstVisit : true,
 			displayName : 'Table',
 			description : '\nYou are sitting at a small table with the stranger.\n',
+			updateLocation : function(){brunchConvo();},
 			interactables : {
 				table : { look : '\nA small table with two chairs, which you and the stranger now occupy.\n' },
-				sign : { look : '\nA well-groomed man in a black suit, paired with a black beret. It seems likely that you met him during last night\'s drunken escapades, and you seem to have gone as far as to arrange a meeting with him for as yet unknown reasons.\n' },
+				stranger : {
+					look : '\nA well-groomed man in a black suit, paired with a black beret. It seems likely that you met him during last night\'s drunken escapades, and you seem to have gone as far as to arrange a meeting with him for as yet unknown reasons.\n',
+					talk: 'If you can see this then something has gone drastically wrong.'
+				}
 			},
 			items : {
 				vodka : {
 					displayName : 'vodka',
 					description : '\nVodka in an ornate decanter, standing in a bowl of ice. Condensation has formed on its outside.\n',
 					use : function(){
+						gameData.player.drankVodka = true;
             return "You drink the vodka."
           },
 					quantity : 1,
@@ -79,6 +85,7 @@ var gameData = {
 					displayName : 'bread and butter',
 					description : '\nWhite bread with butter spread on it.\n',
 					use : function(){
+						gameData.player.ateFood = true;
             return "You eat the bread and butter."
           },
 					quantity : 1,
@@ -88,6 +95,7 @@ var gameData = {
 					displayName : 'caviar',
 					description : '\nCaviar in a glass bowl.\n',
 					use : function(){
+						gameData.player.ateFood = true;
             return "You eat the caviar. It tastes expensive."
           },
 					quantity : 1,
@@ -97,6 +105,7 @@ var gameData = {
 					displayName : 'pickled mushrooms',
 					description : '\nA saucer of pickled mushrooms.\n',
 					use : function(){
+						gameData.player.ateFood = true;
             return "You eat the pickled mushrooms."
           },
 					quantity : 1,
@@ -129,3 +138,15 @@ module.exports.gameData = gameData;
 module.exports.gameActions = gameActions;
 
 // === Helper Functions ===
+function eatFood(){
+	gameData.player.ateFood = true;
+	return 'You eat the food.'
+}
+
+function brunchConvo(){
+	if(gameData.player.drankVodka){
+		gameData.map['Table'].interactables.stranger.talk = 'So here\'s the next thing [PLACEHOLDER]';
+	} else {
+		gameData.map['Table'].interactables.stranger.talk = '\"Drink the vodka, Stepan!\"';
+	}
+}

@@ -1,5 +1,5 @@
 // === Server Flags ===
-var debugMode = false;
+var debugMode = true;
 
 // === Initilize Express ===
 var express = require('express');
