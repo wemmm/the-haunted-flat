@@ -61,6 +61,48 @@ var gameData = {
 			firstVisit : true,
 			displayName : 'Table',
 			description : '\nYou are sitting at a small table with the stranger.\n',
+			interactables : {
+				table : { look : '\nA small table with two chairs, which you and the stranger now occupy.\n' },
+				sign : { look : '\nA well-groomed man in a black suit, paired with a black beret. It seems likely that you met him during last night\'s drunken escapades, and you seem to have gone as far as to arrange a meeting with him for as yet unknown reasons.\n' },
+			},
+			items : {
+				vodka : {
+					displayName : 'vodka',
+					description : '\nVodka in an ornate decanter, standing in a bowl of ice. Condensation has formed on its outside.\n',
+					use : function(){
+            return "You drink the vodka."
+          },
+					quantity : 1,
+					hidden : false
+				},
+				bread : {
+					displayName : 'bread and butter',
+					description : '\nWhite bread with butter spread on it.\n',
+					use : function(){
+            return "You eat the bread and butter."
+          },
+					quantity : 1,
+					hidden : false
+				},
+				caviar : {
+					displayName : 'caviar',
+					description : '\nCaviar in a glass bowl.\n',
+					use : function(){
+            return "You eat the caviar. It tastes expensive."
+          },
+					quantity : 1,
+					hidden : false
+				},
+				mushrooms : {
+					displayName : 'pickled mushrooms',
+					description : '\nA saucer of pickled mushrooms.\n',
+					use : function(){
+            return "You eat the pickled mushrooms."
+          },
+					quantity : 1,
+					hidden : false
+				}
+			},
 			exits : {
 				another_place : {
 					displayName : '',

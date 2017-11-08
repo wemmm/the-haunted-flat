@@ -367,15 +367,15 @@ function itemsToString(itemsObject){
 		return '';
 	}
 	if(visibleItems[0].quantity === 1){
-		var returnString = ' There is ';
+		var returnString = 'There is ';
 	} else {
-		var returnString = ' There are ';
+		var returnString = 'There are ';
 	}
 	for(i=0; i<visibleItems.length; ++i){
 		if(visibleItems[i].quantity > 1){
 			returnString = returnString.concat(visibleItems[i].quantity+' '+visibleItems[i].name+'s');
 		} else {
-			returnString = returnString.concat('a '+visibleItems[i].name);
+			returnString = returnString.concat(''+visibleItems[i].name);
 		}
 		if(i === visibleItems.length-2){
 			returnString = returnString.concat(' and ');
