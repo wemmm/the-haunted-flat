@@ -67,7 +67,7 @@ var gameData = {
 				table : { look : '\nA small table with two chairs, which you and the stranger now occupy.\n' },
 				stranger : {
 					look : '\nA well-groomed man in a black suit, paired with a black beret. It seems likely that you met him during last night\'s drunken escapades, and you seem to have gone as far as to arrange a meeting with him for as yet unknown reasons.\n',
-					talk: 'If you can see this then you have neither drank nor not drank the vodka, which is impossible. Congratulations!.'
+					talk: 'If you can see this then you have neither consumed nor not consumed the vodka, which is impossible. Congratulations!.\n'
 				}
 			},
 			items : {
@@ -76,7 +76,7 @@ var gameData = {
 					description : '\nVodka in an ornate decanter, standing in a bowl of ice. Condensation has formed on its outside.\n',
 					use : function(){
 						gameData.player.drankVodka = true;
-            return "You drink the vodka."
+            return "\nYou drink the vodka.\n"
           },
 					quantity : 1,
 					hidden : false
@@ -86,7 +86,7 @@ var gameData = {
 					description : '\nWhite bread with butter spread on it.\n',
 					use : function(){
 						gameData.player.ateFood = true;
-            return "You eat the bread and butter."
+            return "\nYou eat the bread and butter.\n"
           },
 					quantity : 1,
 					hidden : false
@@ -96,41 +96,37 @@ var gameData = {
 					description : '\nCaviar in a glass bowl.\n',
 					use : function(){
 						gameData.player.ateFood = true;
-            return "You eat the caviar. It tastes expensive."
+            return "\nYou eat the caviar. It tastes expensive.\n"
           },
 					quantity : 1,
 					hidden : false
 				},
 				mushrooms : {
-					displayName : 'pickled mushrooms',
+					displayName : 'a saucer of pickled mushrooms',
 					description : '\nA saucer of pickled mushrooms.\n',
 					use : function(){
 						gameData.player.ateFood = true;
-            return "You eat the pickled mushrooms."
+            return "\nYou eat the pickled mushrooms.\n"
           },
 					quantity : 1,
 					hidden : false
 				},
 				frankfurters : {
-					displayName : 'frankfurters',
+					displayName : 'a pan of frankfurters',
 					description : '\nA pan of frankfurters in tomato sauce.\n',
 					use : function(){
 						gameData.player.ateFood = true;
-            return "You eat the frankfurters."
+            return "\nYou eat the frankfurters.\n"
           },
 					quantity : 1,
 					hidden : false
 				},
 				contract : {
-					displayName : 'contract',
+					displayName : 'a contract',
 					description : '\nA contract for Woland to perform at the Variety Theatre, of which you are the manager.\n',
-					use : function(){
-						gameData.player.checkedContract = true;
-						return "PLACEHOLDER"
-					},
 					quantity : 1,
 					hidden : true
-				}
+				},
 			},
 			exits : {
 				another_place : {
@@ -160,8 +156,11 @@ module.exports.gameActions = gameActions;
 // === Helper Functions ===
 function brunchConvo(){
 	if(gameData.player.drankVodka){
+		gameData.map['Table'].items.contract.hidden = false
 		gameData.map['Table'].interactables.stranger.talk = '\nThe vodka does help slightly, and you can feel your headache receding. Unfortunately, your memory has not substantially improved as you\'re still unclear as to who this man is. Your confusion must show on your face, and the stranger says gravely:\n\n\"Woland, professor of black magic\. I offered myself as a guest artiste at the Variety, which you accepted - and signed a contract for seven perfomances.\"\n\nYou gasp audibly, but Woland continues.\"You invited me here at ten o\'clock to conclude the details, but when I arrived your maid, Grunya, told me what a state you were in, so I sent her to get some vodka and food. No, no, put your wallet away, Stepan, what nonsense!\"\n\nYou take a few moments to take this new information in. It does at least explain Woland\'s presence in your room, as well as the food. One thing is still bothering you, though.\n\n\"Would you mind showing me the contract, Woland?\"\n';
 	} else {
 		gameData.map['Table'].interactables.stranger.talk = '\nYou ask the stranger if he intends to dine with you.\n\n\"I never eat when I\'m drinking\", he says, and pours out two glasses of vodka from the decanter.\"Have you remembered my name yet?\"\n\nYou can only grin sheepishly and shrug your shoulders. Some dim memories, including attempting to kiss a woman who worked for the radio, and going to the dacha, have returned to you, but they seem uninteresting in comparison to the situation you\'re currently in.\n\nThe stranger pushes a glass towards you. \"Better DRINK some VODKA, Stepan, then we can continue our TALK.\"\n';
 	}
 }
+
+console.log()

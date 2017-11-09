@@ -108,7 +108,7 @@ var actions = {
 	},
 
 	help : function(game, command){
-		return {message:'Here\'s a handy list of verbs that this game likes:\n- Drop [item]\n- Go [destination]\n- Inventory\n- Look (at) [thing]\n- Take [item]\n- Use [item]\n- Talk (to) [thing]', success: true};
+		return {message:'\nHere\'s a handy list of verbs that this game likes:\n- Drop [item]\n- Go [destination]\n- Inventory\n- Look (at) [thing]\n- Take [item]\n- Use [item]\n- Talk (to) [thing]\n', success: true};
 	},
 
 	drop : function(game, command){
@@ -206,7 +206,7 @@ var actions = {
 		} catch(error) {
 			try {
 				moveItem(command.subject, getCurrentLocation(game).items, game.player.inventory);
-				return {message: command.subject + ' taken', success: true};
+				return {message: '\n' + command.subject + ' taken.\n', success: true};
 			} catch(error2){
 				return {message: 'Best just to leave the ' + command.subject + ' as it is.', success: false};
 			}
@@ -215,18 +215,18 @@ var actions = {
 
 	use : function(game, command){
 		if(!command.subject){
-			return {message: 'What would you like to use?', success: false};
+			return {message: '\nWhat would you like to use?\n', success: false};
 		}
 		try {
 			return {message: getItem(game.player.inventory, command.subject).use(), success: true};
 		} catch (itemNotInInventoryError) {
-			return {message: 'Can\'t do that.', success: false};
+			return {message: '\nCan\'t do that.\n', success: false};
 		}
 	},
 
 	talk : function(game, command){
 		if(!command.subject){
-			return {message: 'Talk to whom?', success: false};
+			return {message: '\nTalk to whom?\n', success: false};
 		}
 		try {
 			try {
@@ -239,7 +239,7 @@ var actions = {
 				return {message: interact(game, 'talk', command.subject), success: true};
 			} catch(subjectNotFound
 				) {
-				return {message: 'The '+command.subject+' does not seem to have anything to say.', success: false};
+				return {message: '\nThe '+command.subject+' does not seem to have anything to say.\n', success: false};
 			}
 		}
 	}
@@ -385,7 +385,7 @@ function itemsToString(itemsObject){
 			returnString = returnString.concat(', ');
 		}
 	}
-	return returnString;
+	return returnString + '\n';
 }
 
 function interact(game, interaction, subject){
