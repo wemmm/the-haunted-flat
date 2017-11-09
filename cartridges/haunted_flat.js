@@ -78,6 +78,10 @@ var gameData = {
 						gameData.player.drankVodka = true;
             return "\nYou drink the vodka.\n"
           },
+					drink : function(){
+						gameData.player.drankVodka = true;
+            return "\nYou drink the vodka.\n"
+          },
 					quantity : 1,
 					hidden : false
 				},
@@ -86,6 +90,10 @@ var gameData = {
 					description : '\nWhite bread with butter spread on it.\n',
 					use : function(){
 						gameData.player.ateFood = true;
+            return "\nYou eat the bread and butter.\n"
+          },
+					eat : function(){
+						gameData.player.drankVodka = true;
             return "\nYou eat the bread and butter.\n"
           },
 					quantity : 1,
@@ -98,6 +106,10 @@ var gameData = {
 						gameData.player.ateFood = true;
             return "\nYou eat the caviar. It tastes expensive.\n"
           },
+					eat : function(){
+						gameData.player.drankVodka = true;
+            return "\nYou eat the caviar. It tastes expensive.\n"
+          },
 					quantity : 1,
 					hidden : false
 				},
@@ -108,6 +120,10 @@ var gameData = {
 						gameData.player.ateFood = true;
             return "\nYou eat the pickled mushrooms.\n"
           },
+					eat : function(){
+						gameData.player.drankVodka = true;
+            return "\nYou eat the mushrooms.\n"
+          },
 					quantity : 1,
 					hidden : false
 				},
@@ -116,6 +132,10 @@ var gameData = {
 					description : '\nA pan of frankfurters in tomato sauce.\n',
 					use : function(){
 						gameData.player.ateFood = true;
+            return "\nYou eat the frankfurters.\n"
+          },
+					eat : function(){
+						gameData.player.drankVodka = true;
             return "\nYou eat the frankfurters.\n"
           },
 					quantity : 1,

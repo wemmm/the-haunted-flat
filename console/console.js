@@ -224,6 +224,28 @@ var actions = {
 		}
 	},
 
+	drink : function(game, command){
+		if(!command.subject){
+			return {message: '\nWhat would you like to drink?\n', success: false};
+		}
+		try {
+			return {message: getItem(game.player.inventory, command.subject).drink(), success: true};
+		} catch (itemNotInInventoryError) {
+			return {message: '\nCan\'t drink that.\n', success: false};
+		}
+	},
+
+	eat : function(game, command){
+		if(!command.subject){
+			return {message: '\nWhat would you like to eat?\n', success: false};
+		}
+		try {
+			return {message: getItem(game.player.inventory, command.subject).eat(), success: true};
+		} catch (itemNotInInventoryError) {
+			return {message: '\nCan\'t eat that.\n', success: false};
+		}
+	},
+
 	talk : function(game, command){
 		if(!command.subject){
 			return {message: '\nTalk to whom?\n', success: false};
