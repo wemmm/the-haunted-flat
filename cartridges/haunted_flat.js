@@ -143,23 +143,22 @@ var gameData = {
 				},
 				contract : {
 					displayName : 'a contract',
-					description : '\nA contract for Woland to perform at the Variety Theatre, of which you are the manager.\n',
+					description : '\nA contract for Woland to perform at the Variety Theatre, of which you are the manager. It bears both your signature and that of the treasurer, Rimsky, and further reading indicates that Woland has been paid a cash advance of ten thousand roubles against his fee of thirty-five thousand roubles.\n\nWhat the hell? There\'s surely no way that you could forget a deal of this magnitude, but any further signs of disbelief would surely offend.\n\nDoing your best to ignore a rising sense of panic, you resolve to GO to the HALLWAY to see if you can find Grunya, and possibly place a phonecall to Rimsky about this contract.\n',
 					quantity : 1,
 					hidden : true
 				},
 			},
 			exits : {
-				another_place : {
-					displayName : '',
-					destination : '',
+				hallway : {
+					displayName : 'hallway',
+					destination : 'Hallway',
 					hidden: true
 				}
 			}
 		},
-		'End' : {
+		'Hallway' : {
 			firstVisit : true,
-			description : 'placeholder',
-			setup : function(){end();}
+			description : '\nPLACEHOLDER because I have yet to write this.\n',
 		},
 	}
 };
@@ -177,7 +176,7 @@ module.exports.gameActions = gameActions;
 function brunchConvo(){
 	if(gameData.player.drankVodka){
 		gameData.map['Table'].items.contract.hidden = false
-		gameData.map['Table'].interactables.stranger.talk = '\nThe vodka does help slightly, and you can feel your headache receding. Unfortunately, your memory has not substantially improved as you\'re still unclear as to who this man is. Your confusion must show on your face, and the stranger says gravely:\n\n\"Woland, professor of black magic\. I offered myself as a guest artiste at the Variety, which you accepted - and signed a contract for seven perfomances.\"\n\nYou gasp audibly, but Woland continues.\"You invited me here at ten o\'clock to conclude the details, but when I arrived your maid, Grunya, told me what a state you were in, so I sent her to get some vodka and food. No, no, put your wallet away, Stepan, what nonsense!\"\n\nYou take a few moments to take this new information in. It does at least explain Woland\'s presence in your room, as well as the food. One thing is still bothering you, though.\n\n\"Would you mind showing me the contract, Woland?\"\n';
+		gameData.map['Table'].interactables.stranger.talk = '\nYour headache recedes but your memory has not improved. You\'re still unclear as to who this man is. Your confusion must show on your face, and the stranger says gravely:\n\n\"Woland, professor of black magic. I offered myself as a guest artiste at the Variety, which you accepted - and signed a contract for seven perfomances.\"\n\nYou gasp audibly, but Woland continues.\"You invited me here at ten o\'clock to conclude the details, but when I arrived your maid told me what a state you were in, so I sent her for some vodka and food. No, no, put your wallet away, Stepan, what nonsense!\"\n\nYou take a few moments to take this new information in. It does at least explain Woland\'s presence in your room, as well as the food. One thing is still bothering you, though.\n\n\"Would you mind showing me the contract, Woland?\"\n\n\"Oh, but of course\", he says. \"I shall put it on the table. TAKE it and LOOK at it.\"\n';
 	} else {
 		gameData.map['Table'].interactables.stranger.talk = '\nYou ask the stranger if he intends to dine with you.\n\n\"I never eat when I\'m drinking\", he says, and pours out two glasses of vodka from the decanter.\"Have you remembered my name yet?\"\n\nYou can only grin sheepishly and shrug your shoulders. Some dim memories, including attempting to kiss a woman who worked for the radio, and going to the dacha, have returned to you, but they seem uninteresting in comparison to the situation you\'re currently in.\n\nThe stranger pushes a glass towards you. \"Better DRINK some VODKA, Stepan, then we can continue our TALK.\"\n';
 	}
