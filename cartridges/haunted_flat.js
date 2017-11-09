@@ -35,7 +35,8 @@ var gameData = {
 		'A Stranger in the Bedroom' : {
 			firstVisit : true,
 			displayName : 'Your bedroom, with a stranger in it.',
-			description : '\nYou call out for your maid, Grunya. Upon hearing no response, you shout for your flatmate, Berlioz. Still nothing. Won\'t anybody bring you an aspirin? Eventually you haul yourself up and go to look in the mirror.\n\nYour appearance is scruffy, and you are wearing a shirt, tie, underpants and socks. Suddenly you realise that you are not the only person you can see in the mirror. Reflected in its surface, standing behind you, is a STRANGER. You feel certain that you\'ve never met him before.\n\nIs it a good idea to TALK to strangers?\n',
+			description : 'Generic error message.',
+			setup : function(){strangerIntro();},
 			interactables : {
 				room : { look : '\nIt is still dark, but you can see the following items: a bed, a nightstand, a chair, a mirror, a table and a mysterious man.\n' },
 				bed : { look : '\nUnmade.\n' },
@@ -47,7 +48,7 @@ var gameData = {
 				table : { look : '\nA small table with two chairs.\n' },
         stranger : {
 					look : '\nA well-groomed man in a black suit, paired with a black beret. You don\'t know him and you don\'t know how he got in here.\n',
-					talk : '\n\"Good morning, my dear Stepan Bogdanovich!\"\n\nStuttering, you ask the mysterious man what he wants while he checks his pocket watch.\n\nSmiling, he replies:\"Eleven. I have been waiting exactly an hour for you to wake up. Our appointment was at ten!\"\n\nYou feel suddenly underdressed and clumsily start to put on your trousers, having spotted them on the chair by the bed. Appointment? You\'ve only just met this man.\n\n\"Have you forgotten my name?\" asks the man. \"No matter. Come over to the TABLE. Something sharp and peppery to eat - and a little hair of the dog - will bring you back to life.\"\n'
+					talk : 'Something has gone wrong if you can see this.'
 				 }
 			},
 			exits : {
@@ -143,7 +144,7 @@ var gameData = {
 				},
 				contract : {
 					displayName : 'a contract',
-					description : '\nA contract for Woland to perform at the Variety Theatre, of which you are the manager. It bears both your signature and that of the treasurer, Rimsky, and further reading indicates that Woland has been paid a cash advance of ten thousand roubles against his fee of thirty-five thousand roubles.\n\nWhat the hell? There\'s surely no way that you could forget a deal of this magnitude, but any further signs of disbelief would surely offend.\n\nDoing your best to ignore a rising sense of panic, you resolve to GO to the HALLWAY to see if you can find Grunya, and possibly place a phonecall to Rimsky about this contract.\n',
+					description : 'You really shouldn\'t be looking at this yet.',
 					quantity : 1,
 					hidden : true
 				},
@@ -173,13 +174,20 @@ module.exports.gameData = gameData;
 module.exports.gameActions = gameActions;
 
 // === Helper Functions ===
+function strangerIntro(){
+	gameData.map['A Stranger in the Bedroom'].description = dialogue.strangerIntroScene
+	gameData.map['A Stranger in the Bedroom'].interactables.stranger.talk = dialogue.hereIAm
+}
+
 function brunchConvo(){
 	if(gameData.player.drankVodka){
 		gameData.map['Table'].items.contract.hidden = false
-		gameData.map['Table'].interactables.stranger.talk = '\nYour headache recedes but your memory has not improved. You\'re still unclear as to who this man is. Your confusion must show on your face, and the stranger says gravely:\n\n\"Woland, professor of black magic. I offered myself as a guest artiste at the Variety, which you accepted - and signed a contract for seven perfomances.\"\n\nYou gasp audibly, but Woland continues.\"You invited me here at ten o\'clock to conclude the details, but when I arrived your maid told me what a state you were in, so I sent her for some vodka and food. No, no, put your wallet away, Stepan, what nonsense!\"\n\nYou take a few moments to take this new information in. It does at least explain Woland\'s presence in your room, as well as the food. One thing is still bothering you, though.\n\n\"Would you mind showing me the contract, Woland?\"\n\n\"Oh, but of course\", he says. \"I shall put it on the table. TAKE it and LOOK at it.\"\n';
+		gameData.map['Table'].items.contract.description = dialogue.contract
+		gameData.map['Table'].interactables.stranger.talk = dialogue.brunch1;
 	} else {
-		gameData.map['Table'].interactables.stranger.talk = '\nYou ask the stranger if he intends to dine with you.\n\n\"I never eat when I\'m drinking\", he says, and pours out two glasses of vodka from the decanter.\"Have you remembered my name yet?\"\n\nYou can only grin sheepishly and shrug your shoulders. Some dim memories, including attempting to kiss a woman who worked for the radio, and going to the dacha, have returned to you, but they seem uninteresting in comparison to the situation you\'re currently in.\n\nThe stranger pushes a glass towards you. \"Better DRINK some VODKA, Stepan, then we can continue our TALK.\"\n';
+		gameData.map['Table'].interactables.stranger.talk = dialogue.brunch2;
 	}
 }
 
-console.log()
+
+dialogue = require('./haunted_assets/copiouslyLongDialogue.js')
