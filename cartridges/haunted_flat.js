@@ -166,13 +166,20 @@ var gameData = {
 				room : { look : '\nYou can see the following: a telephone, a mirror and the door to Berlioz\'s room, with a wax seal on it.\n' },
 				telephone : {
 					look : '\nA telephone. You really ought to phone Rimsky and ask for some more details about this ostensible contract with Woland.\n',
-					use : '\nPLACEHOLDER\n'
+					use : '\nI am error.\n',
 			  },
         mirror : { look : '\nAnother full length mirror hangs in your hallway.\n' },
         self : { look : '\nYou do feel a little better, at least physically, and you are successfully wearing trousers, which represents something of an improvement to your situation. It\'s a shame about the existential dread you\'re now feeling, but you can\'t have it all.\n' },
 				door : { look : '\nThe door to Berlioz\'s room.\n' },
 				seal : { look : '\nA wax seal that usually signifies that the owner of the room has \'mysteriously\' vanished, and their assets have been seized for inspection.\n' }
 			},
+			exits : {
+				kitchen : {
+					displayName : 'kitchen',
+					destination : 'Actually Your Bedroom Again',
+					hidden: true
+				}
+			}
 		},
 	}
 };
