@@ -2,13 +2,14 @@
 var gameData = {
 	commandCounter : 0,
 	gameOver : false,
-	introText : '\nYou are Stepa Likhodeyev, manager of the Variety Theatre, and you are just waking up from a terrible hangover. The flat you share on Sadovaya Street, Moscow, has a curious reputation: its occupants tend to inexplicably vanish. \n\nYou really ought to get out of bed and find some aspirin, although first you should probably put on some trousers.\n',
+	introText : '\nYou are Stepan \'Stepa\' Likhodeyev Bogdanovich, manager of the Variety Theatre, and you are just waking up from a terrible hangover. The flat you share on Sadovaya Street, Moscow, has a curious reputation: its occupants tend to inexplicably vanish. \n\nYou really ought to get out of bed and find some aspirin, although first you should probably put on some trousers.\n',
 	outroText : 'Thanks for playing!',
 	player : {
 		currentLocation : 'Bedroom',
 		inventory : {},
 		ateFood : false,
-		drankVodka : false
+		drankVodka : false,
+		madeCall : false
 	},
 	map : {
 		'Bedroom' : {
@@ -94,7 +95,7 @@ var gameData = {
             return "\nYou eat the bread and butter.\n"
           },
 					eat : function(){
-						gameData.player.drankVodka = true;
+						gameData.player.ateFood = true;
             return "\nYou eat the bread and butter.\n"
           },
 					quantity : 1,
@@ -108,7 +109,7 @@ var gameData = {
             return "\nYou eat the caviar. It tastes expensive.\n"
           },
 					eat : function(){
-						gameData.player.drankVodka = true;
+						gameData.player.ateFood = true;
             return "\nYou eat the caviar. It tastes expensive.\n"
           },
 					quantity : 1,
@@ -122,7 +123,7 @@ var gameData = {
             return "\nYou eat the pickled mushrooms.\n"
           },
 					eat : function(){
-						gameData.player.drankVodka = true;
+						gameData.player.ateFood = true;
             return "\nYou eat the mushrooms.\n"
           },
 					quantity : 1,
@@ -136,7 +137,7 @@ var gameData = {
             return "\nYou eat the frankfurters.\n"
           },
 					eat : function(){
-						gameData.player.drankVodka = true;
+						gameData.player.ateFood = true;
             return "\nYou eat the frankfurters.\n"
           },
 					quantity : 1,
@@ -159,13 +160,15 @@ var gameData = {
 		},
 		'Hallway' : {
 			firstVisit : true,
-			description : '\nPLACEHOLDER because I have yet to write this.\n',
+			description : '\nGeneric error message.\n',
+			setup : function(){hallSetup();},
 			interactables : {
-				room : { look : '\nYou can see the following: a telephone, a mirror and the door to Berlioz\'s room.\n' },
+				room : { look : '\nYou can see the following: a telephone, a mirror and the door to Berlioz\'s room, with a wax seal on it.\n' },
 				telephone : { look : '\nA telephone. You really ought to phone Rimsky and ask for some more details about this ostensible contract with Woland.\n' },
         mirror : { look : '\nAnother full length mirror hangs in your hallway.\n' },
         self : { look : '\nYou do feel a little better, at least physically, and you are successfully wearing trousers, which represents something of an improvement to your situation. It\'s a shame about the existential dread you\'re now feeling, but you can\'t have it all.\n' },
-				door : { look : '\nThe door to Berlioz\'s room. It has a vast wax seal on it now, and panic grips you as you recall a potentially compromising conversation you had with him some days before.\n' }
+				door : { look : '\nThe door to Berlioz\'s room. It has a vast wax seal on it now, and panic grips you as you recall a potentially compromising conversation you had with him some days before.\n' },
+				seal : { look : '\nA wax seal that usually signifies that the owner of the room has \'mysteriously\' vanished, and their assets have been seized for inspection.\n' }
 			},
 		},
 	}
@@ -194,6 +197,10 @@ function brunchConvo(){
 	} else {
 		gameData.map['Table'].interactables.stranger.talk = dialogue.brunch2;
 	}
+}
+
+function hallSetup() {
+	gameData.map['Hallway'].description = dialogue.hallSetup
 }
 
 

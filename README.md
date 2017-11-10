@@ -42,6 +42,27 @@ load haunted_flat
 
 ![intro](https://github.com/wemmm/the-haunted-flat/blob/master/intro.png)
 
+## Okay how do I play it?
+
+You type commands into the text parser (the lined-off section at the bottom of the window) and hope that I've been insightful enough to write a response to them.
+
+More specifically, you'll mainly be typing verbs and objects. For example: ```look at bed``` or ```take bread```. Here's a list of verbs:
+
+| Verb        | Usage           | Notes  |
+| ------------- |:-------------:| -----:|
+| Look      | "look at [object]" | Works on inventory items and environmental things. |
+| Take      | "take [item]"      |   Adds item to inventory. |
+| Use | "use [item]"      | Attempts to use item. Only for inventory items. |
+| Talk | "talk to [character]"   | Returns dialogue if the target has anything to say. |
+| Drop | "drop [item]"  |  Removes target item from inventory. Can be picked up again. |
+| Eat  | "eat [item]"      |  Attempts to eat item. Only for inventory items that seem to be food. |
+| Drink  | "drink [item]"   |   Attempts to drink item. Only for inventory items that seem to be beverages. |
+| Go | "go to [destination]"  | Go to the specified area. |
+
+You can also use the command ```help``` to see this list in-game, and the command ```inventory``` to return a list of items you've picked up.
+
+Most items referred to in the text can be looked at for further information, and in many situations you can ```look at room``` to see a list of things that can be inspected. Words that are capitalised suggest actions that will progress the scene.
+
 ## Tech:
 
 * Node
