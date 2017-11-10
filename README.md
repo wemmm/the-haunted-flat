@@ -69,3 +69,5 @@ Most items referred to in the text can be looked at for further information, and
 * Express
 * Javascript
 * npm text-adventure
+
+![intro](https://github.com/wemmm/the-haunted-flat/blob/master/cover.JPG)
