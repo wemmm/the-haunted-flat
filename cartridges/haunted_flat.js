@@ -170,7 +170,7 @@ var gameData = {
 			  },
         mirror : { look : '\nAnother full length mirror hangs in your hallway.\n' },
         self : { look : '\nYou do feel a little better, at least physically, and you are successfully wearing trousers, which represents something of an improvement to your situation. It\'s a shame about the existential dread you\'re now feeling, but you can\'t have it all.\n' },
-				door : { look : '\nThe door to Berlioz\'s room. It has a vast wax seal on it now, and panic grips you as you recall a potentially compromising conversation you had with him some days before.\n' },
+				door : { look : '\nThe door to Berlioz\'s room.\n' },
 				seal : { look : '\nA wax seal that usually signifies that the owner of the room has \'mysteriously\' vanished, and their assets have been seized for inspection.\n' }
 			},
 		},
@@ -194,16 +194,18 @@ function strangerIntro(){
 
 function brunchConvo(){
 	if(gameData.player.drankVodka){
-		gameData.map['Table'].items.contract.hidden = false
-		gameData.map['Table'].items.contract.description = dialogue.contract
+		gameData.map['Table'].items.contract.hidden = false;
+		gameData.map['Table'].items.contract.description = dialogue.contract;
 		gameData.map['Table'].interactables.stranger.talk = dialogue.brunch1;
 	} else {
-		gameData.map['Table'].interactables.stranger.talk = dialogue.brunch2;
+		gameData.map['Table'].interactables.stranger.talk = dialogue.brunch2
 	}
 }
 
 function hallSetup() {
-	gameData.map['Hallway'].description = dialogue.hallSetup
+	gameData.map['Hallway'].description = dialogue.hallSetup;
+	gameData.map['Hallway'].interactables.telephone.use = dialogue.rimskyCall;
+	gameData.map['Hallway'].interactables.door.look = dialogue.politicalConcerns
 }
 
 
