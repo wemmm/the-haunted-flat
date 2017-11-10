@@ -220,7 +220,7 @@ var actions = {
 		try {
 			return {message: getItem(game.player.inventory, command.subject).use(), success: true};
 		} catch (itemNotInInventoryError) {
-			return {message: '\nCan\'t do that.\n', success: false};
+			return {message: getItem(getCurrentLocation(game).items, command.subject).use, success: true};
 		}
 	},
 

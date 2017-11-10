@@ -49,10 +49,10 @@ You type commands into the text parser (the lined-off section at the bottom of t
 More specifically, you'll mainly be typing verbs and objects. For example: ```look at bed``` or ```take bread```. Here's a list of verbs:
 
 | Verb        | Usage           | Notes  |
-| ------------- |:-------------:| -----:|
+| ------------- |:-------------|:-----|
 | Look      | "look at [object]" | Works on inventory items and environmental things. |
 | Take      | "take [item]"      |   Adds item to inventory. |
-| Use | "use [item]"      | Attempts to use item. Only for inventory items. |
+| Use | "use [item or object]"      | Attempts to use target. |
 | Talk | "talk to [character]"   | Returns dialogue if the target has anything to say. |
 | Drop | "drop [item]"  |  Removes target item from inventory. Can be picked up again. |
 | Eat  | "eat [item]"      |  Attempts to eat item. Only for inventory items that seem to be food. |
