@@ -123,7 +123,7 @@ var gameData = {
           },
 					eat : function(){
 						gameData.player.ateFood = true;
-            return "\nYou eat the mushrooms.\n"
+            return "\nYou eat the pickled mushrooms.\n"
           },
 					quantity : 1,
 					hidden : false
@@ -184,8 +184,13 @@ var gameData = {
 			firstVisit : true,
 			description : '\nGeneric error message.\n',
 			setup : function(){bedroomAgainSetup();},
+			updateLocation : function(){didYouTakeTheFrankfurters();},
 			interactables : {
 				room : { look : '\nWoland, a giant black cat and a very thin man are here.\n' },
+				cat : {
+					look : '\nA huge black cat.\n',
+					talk: '\nError message!\n'
+				}
 			},
 		},
 	}
@@ -224,6 +229,14 @@ function hallSetup() {
 
 function bedroomAgainSetup() {
 	gameData.map['Actually Your Bedroom Again'].description = dialogue.bedroomAgainSetup
+}
+
+function didYouTakeTheFrankfurters() {
+  if(gameData.map['Table'].items.frankfurters){
+		gameData.map['Actually Your Bedroom Again'].interactables.cat.talk = dialogue.noIDidNot
+	} else {
+		gameData.map['Actually Your Bedroom Again'].interactables.cat.talk = dialogue.yesIDid
+	}
 }
 
 

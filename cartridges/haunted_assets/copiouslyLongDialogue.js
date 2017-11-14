@@ -20,6 +20,11 @@ module.exports = {
 
   rimskyCall : '\nYou dial Rimsky, the treasurer of the Variety Theatre. As you wait for him to pick up, you note that you must be delicate about this, as you\'re sure to sound odd if you bluntly ask if you signed a thirty-five thousand rouble contract yesterday.\n\n"Yes?" comes Rimsky\'s harsh, unpleasant voice.\n\n"Hello," you say gently. "Likhodeyev speaking. It\'s about this... er... artiste. In my flat. Called Woland. I just wanted to ask... is everything okay?"\n\n\"Oh, the black magician?\" says Rimsky. \"The posters will be here any minute now.\"\n\nYou mumble some sort of assent and replace the receiver. What a ridiculous thing to have forgotten. You begin to wonder if Grunya the maid is actually in - maybe you should GO to the KITCHEN and look for her.\n',
 
-  bedroomAgainSetup : '\nYou knock on the kitchen door and shout out for Grunya. To your surprise, it\'s not Grunya who replies, but Woland. From the bedroom, he says loudly: \"Grunya isn\'t here. I sent her away to her family in Voronezh. She complained that you had cheated her out of her leave.\"\n\nYou find this so unexpected and absurd that you turn to head back to the bedroom, but as you do, you see an apparition in the mirror of a tall, thin man wearing a pince-nez. As you try to inspect him, he vanishes, and is replaced in the mirror with the spectre of a huge black cat. You cry out and run to the bedroom.\n\nWoland is no longer alone. The tall man and the vast cat from the mirror are now here too. Although you\'re terrified, maybe you ought to TALK to them.\n'
+  bedroomAgainSetup : '\nYou knock on the kitchen door and shout out for Grunya. To your surprise, it\'s not Grunya who replies, but Woland. From the bedroom, he says loudly: \"Grunya isn\'t here. I sent her away to her family in Voronezh. She complained that you had cheated her out of her leave.\"\n\nYou find this so unexpected and absurd that you turn to head back to the bedroom, but as you do, you see an apparition in the mirror of a tall, thin man wearing a pince-nez. As you try to inspect him, he vanishes, and is replaced in the mirror with the spectre of a huge black cat. You cry out and run to the bedroom.\n\nWoland is no longer alone. The tall man and the vast cat from the mirror are now here too. Although you\'re terrified, maybe you ought to TALK to them.\n',
+
+// Did you take the frankfurters?
+  yesIDid : '\nYep.\n',
+
+  noIDidNot : '\nNope.\n'
 
 }
