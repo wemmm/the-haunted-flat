@@ -23,8 +23,14 @@ module.exports = {
   bedroomAgainSetup : '\nYou knock on the kitchen door and shout out for Grunya. To your surprise, it\'s not Grunya who replies, but Woland. From the bedroom, he says loudly: \"Grunya isn\'t here. I sent her away to her family in Voronezh. She complained that you had cheated her out of her leave.\"\n\nYou find this so unexpected and absurd that you turn to head back to the bedroom, but as you do, you see an apparition in the mirror of a tall, thin man wearing a pince-nez. As you try to inspect him, he vanishes, and is replaced in the mirror with the spectre of a huge black cat. You cry out and run to the bedroom.\n\nWoland is no longer alone. The tall man and the vast cat from the mirror are now here too. Although you\'re terrified, maybe you ought to TALK to them.\n',
 
 // Did you take the frankfurters?
-  yesIDid : '\nYep.\n',
+  yesIDid : '\nThe cat looks over the table, but seemingly sees nothing to its liking. \"Hello Stepan,\" it says, then grumbles, gesturing at the table. \"I thought there would at least be some meat here.\"\n',
 
-  noIDidNot : '\nNope.\n'
+  noIDidNot : '\nThe cat is piling frankfurters onto a plate. \"Hello Stepan,\" it says. \"Lovely flat. Don\'t mind me, though. I\'m famished.\"\n',
+
+  wolandIntroducesHisAssistants : '\n\"You seem astonished, Stepan Bogdanovich! But I assure you that you should not be. The CAT is mine and this tall fellow is my ASSISTANT.\"\n\nFrom your bedroom mirror steps yet another intruder: a broad-shouldered man with fiery red hair. Faint with fear, you lean back against the wall. Woland greets the newcomer. "Ah, AZAZELLO!\"\n',
+
+  tallManSpeaks : '\n\"That\'s them!\" cries the tall man in a goatish voice, referring to you in the plural for some reason. \"They\'ve been behaving disgustingly lately. Getting drunk, carrying on with women, trading on their position and not doing a stroke of work - not that they could do anything even if they tried because they\'re completely incompetent. Pulling the wool over the boss\'s eyes, that\'s what they\'ve been doing!\"\n\nOuch. Okay. You can feel yourself sweating at these accusations, though you cannot tell how this stranger would know any of this.\n',
+
+  azazelloSpeaks : '\nThe man called Azazello glances at you briefly in a derogatory sort of way, then turns to the cat. \"I cannot fathom how this man ever came to manage a theatre,\" he says in a nasal voice. \"He\'s as much a manager as I am a bishop.\"\n\n\"You don\'t look much like a bishop, Azazello,\" says the cat.\n\n\"That\'s what I mean,\" Azazello snarls in response before addressing Woland. \"Will you permit us, messire, to kick him out of Moscow?\"\n'
 
 }

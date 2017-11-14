@@ -8,7 +8,7 @@ var gameData = {
 		currentLocation : 'Bedroom',
 		inventory : {},
 		ateFood : false,
-		drankVodka : false,
+		drankVodka : false
 	},
 	map : {
 		'Bedroom' : {
@@ -188,7 +188,19 @@ var gameData = {
 			interactables : {
 				room : { look : '\nWoland, a giant black cat and a very thin man are here.\n' },
 				cat : {
-					look : '\nA huge black cat.\n',
+					look : '\nA huge black cat, sitting on a chair in the manner of a human. There is something annoyingly nonchalant about it.\n',
+					talk: '\nError message!\n'
+				},
+				woland : {
+					look : '\nWoland is sitting exactly where he was when you left your bedroom.\n',
+					talk: '\nError message!\n'
+				},
+				assistant : {
+					look : '\nA tall, skinny man wearing a pince-nez.\n',
+					talk: '\nError message!\n'
+				},
+				azazello : {
+					look : '\nA broad-shouldered, red-headed man.\n',
 					talk: '\nError message!\n'
 				}
 			},
@@ -229,6 +241,9 @@ function hallSetup() {
 
 function bedroomAgainSetup() {
 	gameData.map['Actually Your Bedroom Again'].description = dialogue.bedroomAgainSetup
+	gameData.map['Actually Your Bedroom Again'].interactables.woland.talk = dialogue.wolandIntroducesHisAssistants
+	gameData.map['Actually Your Bedroom Again'].interactables.azazello.talk = dialogue.azazelloSpeaks
+	gameData.map['Actually Your Bedroom Again'].interactables.assistant.talk = dialogue.tallManSpeaks
 }
 
 function didYouTakeTheFrankfurters() {
