@@ -9,7 +9,6 @@ var gameData = {
 		inventory : {},
 		ateFood : false,
 		drankVodka : false,
-		madeCall : false
 	},
 	map : {
 		'Bedroom' : {
@@ -175,11 +174,19 @@ var gameData = {
 			},
 			exits : {
 				kitchen : {
-					displayName : 'kitchen',
+					displayName : 'the kitchen',
 					destination : 'Actually Your Bedroom Again',
 					hidden: true
 				}
 			}
+		},
+		'Actually Your Bedroom Again' : {
+			firstVisit : true,
+			description : '\nGeneric error message.\n',
+			setup : function(){bedroomAgainSetup();},
+			interactables : {
+				room : { look : '\nWoland, a giant black cat and a very thin man are here.\n' },
+			},
 		},
 	}
 };
@@ -213,6 +220,10 @@ function hallSetup() {
 	gameData.map['Hallway'].description = dialogue.hallSetup;
 	gameData.map['Hallway'].interactables.telephone.use = dialogue.rimskyCall;
 	gameData.map['Hallway'].interactables.door.look = dialogue.politicalConcerns
+}
+
+function bedroomAgainSetup() {
+	gameData.map['Actually Your Bedroom Again'].description = dialogue.bedroomAgainSetup
 }
 
 
