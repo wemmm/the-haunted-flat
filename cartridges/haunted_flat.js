@@ -228,12 +228,12 @@ var gameData = {
 				kitchen : {
 					displayName : 'the kitchen',
 					destination : 'Kitchen',
-					hidden: false
+					hidden: true
 				},
-				frontdoor : {
-					displayName : 'the front door',
+				door : {
+					displayName : 'the door',
 					destination : 'Yalta',
-					hidden: false
+					hidden: true
 				}
 			}
 		},
@@ -255,6 +255,14 @@ var gameData = {
 					hidden: false
 				},
 			}
+		},
+		'Yalta' : {
+			firstVisit : true,
+			description : '\nGeneric error message.\n',
+			setup : function(){yaltaSetup();},
+			interactables : {
+				self : { look : '\nYour nerves are utterly frayed, and you feel an overpowering impulse to try and get out of the flat.\n' }
+			},
 		},
 	}
 };
@@ -311,6 +319,10 @@ function hallAgainSetup() {
 
 function kitchenSetup() {
 	gameData.map['Kitchen'].description = dialogue.kitchenSetup
+}
+
+function yaltaSetup() {
+	gameData.map['Yalta'].description = dialogue.yaltaSetup
 }
 
 

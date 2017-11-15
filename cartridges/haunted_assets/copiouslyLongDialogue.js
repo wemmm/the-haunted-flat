@@ -33,7 +33,9 @@ module.exports = {
 
   azazelloSpeaks : '\nThe man called Azazello glances at you briefly in a derogatory sort of way, then turns to the cat. \"I cannot fathom how this man ever came to manage a theatre,\" he says in a nasal voice. \"He\'s as much a manager as I am a bishop.\"\n\n\"You don\'t look much like a bishop, Azazello,\" says the cat.\n\n\"That\'s what I mean,\" Azazello snarls in response before addressing Woland. \"Will you permit us, messire, to kick him out of Moscow?\"\n\nThe cat hisses, and the assembled company begin to advance upon you.\n\nYou feel strongly that now would be a very good time to GO back to the HALLWAY, and do your best to get away from these unnatural interlopers.',
 
-  hallAgainSetup : '\nThere\'s still a telephone and a mirror here, and the door to Berlioz\'s room remains undisturbed.\n',
+  hallAgainSetup : '\nThere\'s still a telephone and a mirror here, and seal over Berlioz\'s room remains undisturbed. You can get to the KITCHEN or the front DOOR.\n',
 
-  kitchenSetup : '\nThe kitchen of your flat. This is usually Grunya\'s domain, but she definitely isn\'t here. You\'re not sure if you can believe that Woland sent her to Voronezh, but it would hardly be the oddest thing that\'s happened today. There\'s a stove, pans and cupboards here - it\'s not an unusual kitchen by any means. Anyway, you would surely be better served by returning to the HALLWAY and getting out of here before Woland and his associates catch up with you.\n'
+  kitchenSetup : '\nThe kitchen of your flat. This is usually Grunya\'s domain, but she definitely isn\'t here. You\'re not sure if you can believe that Woland sent her to Voronezh, but it would hardly be the oddest thing that\'s happened today. There\'s a stove, pans and cupboards here - it\'s not an unusual kitchen by any means. Anyway, you would surely be better served by returning to the HALLWAY and getting out of here before Woland and his associates catch up with you.\n',
+
+  yaltaSetup : '\nWelcome to Yalta!\n'
 }
