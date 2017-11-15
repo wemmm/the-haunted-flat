@@ -204,6 +204,38 @@ var gameData = {
 					talk: '\nError message!\n'
 				}
 			},
+			exits : {
+				hallway : {
+					displayName : 'hallway',
+					destination : 'Hallway Again',
+					hidden: true
+				}
+			}
+		},
+		'Hallway Again' : {
+			firstVisit : true,
+			description : '\nGeneric error message.\n',
+			setup : function(){hallSetup();},
+			interactables : {
+				room : { look : '\nYou can see the following: a telephone, a mirror and the door to Berlioz\'s room, with a wax seal on it.\n' },
+				telephone : { look : '\nA telephone. You can\'t imagine that anybody you could call is going to be able to help you.\n' },
+        mirror : { look : '\nThe mirror that you saw Woland\'s associates in. Are you going mad?\n' },
+        self : { look : '\nYou are panicking and shaking and sweating.\n' },
+				door : { look : '\nThe door to Berlioz\'s room. It\'s locked and you know that Berlioz is not there.\n' },
+				seal : { look : '\nA wax seal that usually signifies that the owner of the room has \'mysteriously\' vanished, and their assets have been seized for inspection.\n' }
+			},
+			exits : {
+				kitchen : {
+					displayName : 'the kitchen',
+					destination : 'Kitchen',
+					hidden: false
+				},
+				frontdoor : {
+					displayName : 'the front door',
+					destination : 'Yalta',
+					hidden: false
+				}
+			}
 		},
 	}
 };
@@ -252,6 +284,10 @@ function didYouTakeTheFrankfurters() {
 	} else {
 		gameData.map['Actually Your Bedroom Again'].interactables.cat.talk = dialogue.yesIDid
 	}
+}
+
+function hallAgainSetup() {
+	gameData.map['Hallway Again'].description = dialogue.hallAgainSetup
 }
 
 

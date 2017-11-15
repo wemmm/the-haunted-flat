@@ -45,3 +45,12 @@ html, body, #input, #display{
 #enter{
 	display: none;
 }
+
+.scanLines {
+  /*** WEBKIT ***/
+  background: -webkit-repeating-linear-gradient(top, transparent 0px, transparent 1px, rgba(0, 0, 0, 0.25) 1px, rgba(0, 0, 0, 0.25) 2px);
+  -webkit-background-size: 100% 2px;
+  /** MOZILLA **/
+  background: -moz-repeating-linear-gradient(top, transparent 0px, transparent 1px, rgba(0, 0, 0, 0.25) 1px, rgba(0, 0, 0, 0.25) 2px);
+  -moz-background-size: 100% 2px;
+}
