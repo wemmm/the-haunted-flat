@@ -196,11 +196,11 @@ var gameData = {
 					talk: '\nError message!\n'
 				},
 				assistant : {
-					look : '\nA tall, skinny man wearing a pince-nez.\n',
+					look : '\nA tall, skinny man wearing a pince-nez, as per the spectre you saw in the hall mirror.\n',
 					talk: '\nError message!\n'
 				},
 				azazello : {
-					look : '\nA broad-shouldered, red-headed man.\n',
+					look : '\nA broad-shouldered, red-headed man who just walked out of your bedroom mirror as if it were perfectly natural to do so.\n',
 					talk: '\nError message!\n'
 				}
 			},
@@ -215,7 +215,7 @@ var gameData = {
 		'Hallway Again' : {
 			firstVisit : true,
 			description : '\nGeneric error message.\n',
-			setup : function(){hallSetup();},
+			setup : function(){hallAgainSetup();},
 			interactables : {
 				room : { look : '\nYou can see the following: a telephone, a mirror and the door to Berlioz\'s room, with a wax seal on it.\n' },
 				telephone : { look : '\nA telephone. You can\'t imagine that anybody you could call is going to be able to help you.\n' },
@@ -235,6 +235,25 @@ var gameData = {
 					destination : 'Yalta',
 					hidden: false
 				}
+			}
+		},
+		'Kitchen' : {
+			firstVisit : true,
+			description : '\nGeneric error message.\n',
+			setup : function(){kitchenSetup();},
+			interactables : {
+				room : { look : '\nThere\'s a stove, some pans and a variety of cupboards here.\n' },
+				cupboards : { look : '\nCupboards for storing food and crockery and the like.\n' },
+        pans : { look : '\nCooking pans.\n' },
+        self : { look : '\nYour nerves are utterly frayed, and you feel an overpowering impulse to try and get out of the flat.\n' },
+				stove : { look : '\nThis is really not the time to start cooking.\n' },
+			},
+			exits : {
+				hallway : {
+					displayName : 'the hallway',
+					destination : 'Yalta',
+					hidden: false
+				},
 			}
 		},
 	}
@@ -288,6 +307,10 @@ function didYouTakeTheFrankfurters() {
 
 function hallAgainSetup() {
 	gameData.map['Hallway Again'].description = dialogue.hallAgainSetup
+}
+
+function kitchenSetup() {
+	gameData.map['Kitchen'].description = dialogue.kitchenSetup
 }
 
 

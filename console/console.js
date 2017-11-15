@@ -318,17 +318,17 @@ function exitsToString(exitsObject){
 		case 0:
 			return '';
 		case 	1:
-			var returnString = ' Exit is ';
+			var returnString = '\nExit is ';
 			break;
 		default :
-			var returnString = ' Exits are ';
+			var returnString = '\nExits are ';
 	}
 	for(i=0; i<visibleExits.length; ++i){
 		returnString = returnString.concat(visibleExits[i]);
 		if(i === visibleExits.length-2){
 			returnString = returnString.concat(' and ');
 		} else if (i === visibleExits.length-1){
-			returnString = returnString.concat('.');
+			returnString = returnString.concat('.\n');
 		} else {
 			returnString = returnString.concat(', ');
 		}
