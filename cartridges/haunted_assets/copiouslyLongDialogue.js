@@ -37,5 +37,7 @@ module.exports = {
 
   kitchenSetup : '\nThe kitchen of your flat. This is usually Grunya\'s domain, but she definitely isn\'t here. You\'re not sure if you can believe that Woland sent her to Voronezh, but it would hardly be the oddest thing that\'s happened today. There\'s a stove, pans and cupboards here - it\'s not an unusual kitchen by any means. Anyway, you would surely be better served by returning to the HALLWAY and getting out of here before Woland and his associates catch up with you.\n',
 
-  yaltaSetup : '\nWelcome to Yalta!\n'
+  yaltaSetup : '\nYou open the door, ready to run. However, in front of you stands Woland, with his associates behind him. Paralysed by fear, you begin to feel extremely dizzy and lightheaded.\n\n\"My assistants will be needing somewhere to stay, Stepan,\" says Woland. \"And so it seems that there is one too many of us in this flat. And that one, I rather think, is you.\"\n\nThe world spins as you drop to the floor, although you notice the sharp pain as your head hits the doorframe on your way down. Detached from yourself, you wonder if you\'re dying.\n\nBut you don\'t die. The next thing you\'re aware of is a blue sky above you and the sound of waves. You\'re lying on what seems to be stone. When you\'re ready, you should take a LOOK around.',
+
+  yaltaPartTwo : '\nPlaceholder\n'
 }

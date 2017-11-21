@@ -2,7 +2,7 @@
 var gameData = {
 	commandCounter : 0,
 	gameOver : false,
-	introText : '\nYou are Stepan \'Stepa\' Likhodeyev Bogdanovich, manager of the Variety Theatre, and you are just waking up from a terrible hangover. The flat you share on Sadovaya Street, Moscow, has a curious reputation: its occupants tend to inexplicably vanish. \n\nYou really ought to get out of bed and find some aspirin, although first you should probably put on some trousers.\n',
+	introText : '\nYou are Stepan \'Stepa\' Bogdanovich Likhodeyev, manager of the Variety Theatre, and you are just waking up from a terrible hangover. The flat you share on Sadovaya Street, Moscow, has a curious reputation: its occupants tend to inexplicably vanish. \n\nYou really ought to get out of bed and find some aspirin, although first you should probably put on some trousers.\n',
 	outroText : 'Thanks for playing!',
 	player : {
 		currentLocation : 'Bedroom',
@@ -13,6 +13,7 @@ var gameData = {
 	map : {
 		'Bedroom' : {
 			firstVisit : true,
+			setup : function(){setups.demo();},
 			displayName : 'Your bedroom',
 			description : 'You are lying horizontally across your bed, and the room is dark. It\'s hard to see, but what little light there is glints on the surface of a full length MIRROR on the opposite wall. For starters, maybe you should GO over to it and take a look at yourself.\n',
 			interactables : {
@@ -260,8 +261,10 @@ var gameData = {
 			firstVisit : true,
 			description : '\nGeneric error message.\n',
 			setup : function(){yaltaSetup();},
+			updateLocation : function(){yaltaPartTwo();},
 			interactables : {
-				self : { look : '\nYour nerves are utterly frayed, and you feel an overpowering impulse to try and get out of the flat.\n' }
+				self : { look : '\nYour nerves are utterly frayed, and you feel an overpowering impulse to try and get out of the flat.\n' },
+				sky : { look : '\nA beautiful blue sky.\n'}
 			},
 		},
 	}
@@ -325,5 +328,8 @@ function yaltaSetup() {
 	gameData.map['Yalta'].description = dialogue.yaltaSetup
 }
 
+function yaltaPartTwo() {
+	gameData.map['Yalta'].description = dialogue.yaltaPartTwo
+}
 
 dialogue = require('./haunted_assets/copiouslyLongDialogue.js')
