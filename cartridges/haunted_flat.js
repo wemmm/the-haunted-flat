@@ -3,7 +3,7 @@ var gameData = {
 	commandCounter : 0,
 	gameOver : false,
 	introText : '\nYou are Stepan \'Stepa\' Bogdanovich Likhodeyev, manager of the Variety Theatre, and you are just waking up from a terrible hangover. The flat you share on Sadovaya Street, Moscow, has a curious reputation: its occupants tend to inexplicably vanish. \n\nYou really ought to get out of bed and find some aspirin, although first you should probably put on some trousers.\n',
-	outroText : 'Thanks for playing!',
+	outroText : '\nThanks for playing! What will happen to Stepan \'Stepa\' Bogdanovich Likhodeyev? Why is he in Yalta? Who is Woland and what exactly is his problem? You can find out in Bulgakov\'s \'The Master and Margarita\'!\n',
 	player : {
 		currentLocation : 'Bedroom',
 		inventory : {},

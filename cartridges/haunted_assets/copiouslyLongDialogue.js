@@ -41,5 +41,5 @@ module.exports = {
 
   yaltaPartTwo : '\nThe first thing that you notice is the sea stretching out before you - this is the source of the roaring sound that you can hear. You\'re sitting on the very end of a pier. You glance behind you and see a white town climbing up the mountainside.\n\nYou really don\'t have much of an idea what to do in this situation. You guess you could GO towards the SHORE, as there\'s not much of any use to you on the pier.\n',
 
-  shore : '\nPlaceholder!\n'
+  shore : '\nDepsite your shaking legs, you make your way down the pier to the shore. There\'s a man here, smoking and spitting into the sea. He glares at you as you walk towards him, but fails to deter you from asking him where you are. \"I\'m not drunk... Something\'s happened to me. I\'m ill. Where am I? What town is this?\" you enquire, voice hoarse.\n\n\"Yalta, of course,\" grunts the man, showing no sympathy whatsoever.\n\nYou give a gentle sigh, collapse, and faint onto the warm ground.\n'
 }
