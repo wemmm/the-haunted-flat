@@ -263,11 +263,25 @@ var gameData = {
 			setup : function(){yaltaSetup();},
 			updateLocation : function(){yaltaPartTwo();},
 			interactables : {
-				self : { look : '\nYour nerves are utterly frayed, and you feel an overpowering impulse to try and get out of the flat.\n' },
-				sky : { look : '\nA beautiful blue sky.\n'}
+				self : { look : '\nYou\'re exactly the same as you were in your flat - same clothes, same feeling of dread, same Stepa. Except you\'re very plainly no longer in your flat.\n' },
+				sky : { look : '\nA beautiful blue sky.\n' },
+				sea : { look : '\nThe sea, lapping at your feet.\n' },
+				pier : { look : '\nAn old stone pier jutting out from the shore. You\'re sitting right at the end of it.\n' }
 			},
-		},
-	}
+			exits : {
+				shore : {
+					displayName : 'shore',
+					destination : 'Shore',
+					hidden: true
+				},
+		  },
+	  },
+		'Shore' : {
+			firstVisit : true,
+			description : '\nGeneric error message.\n',
+			setup : function(){end();},
+	  }
+  }
 };
 
 // === Game Actions ===
@@ -330,6 +344,11 @@ function yaltaSetup() {
 
 function yaltaPartTwo() {
 	gameData.map['Yalta'].description = dialogue.yaltaPartTwo
+}
+
+function end() {
+	gameData.map['Shore'].description = dialogue.shore;
+	gameData.gameOver = true;
 }
 
 dialogue = require('./haunted_assets/copiouslyLongDialogue.js')
