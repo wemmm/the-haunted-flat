@@ -30,7 +30,9 @@ The Haunted Flat refers to chapter seven of [The Master and Margarita](https://e
 
 ## How does it work?
 
-Clone this repo and:
+Visit [this link](https://haunted-flat.herokuapp.com/) for fun text adventure times in your browser.
+
+Alternatively, clone this repo and:
 ```
 npm install
 npm start
@@ -68,6 +70,14 @@ Most items referred to in the text can be looked at for further information, and
 * Node
 * Express
 * Javascript
+* Heroku
 * npm text-adventure
+
+## TODOs:
+
+* Improve gravitas of ending segments
+* There's probably typos
+* See if I can get the game to load automatically
+* Reflect on how much work it took to convert like seven pages of a novel into a small text adventure
 
 ![intro](https://github.com/wemmm/the-haunted-flat/blob/master/cover.JPG)
