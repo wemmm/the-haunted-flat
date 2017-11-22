@@ -27,7 +27,7 @@ module.exports = {
 
   noIDidNot : '\nThe cat is piling frankfurters onto a plate. \"Hello Stepan,\" it says. \"Lovely flat. Don\'t mind me, though. I\'m famished.\"\n',
 
-  wolandIntroducesHisAssistants : '\n\"You seem astonished, Stepan Bogdanovich! But I assure you that you should not be. The CAT is mine and this tall fellow is my ASSISTANT.\"\n\nFrom your bedroom mirror steps yet another intruder: a broad-shouldered man with fiery red hair. Faint with fear, you lean back against the wall. Woland greets the newcomer. "Ah, AZAZELLO!\"\n',
+  wolandIntroducesHisAssistants : '\n\"You seem astonished, Stepan Bogdanovich! But I assure you that you should not be. The CAT is mine and this tall fellow is my ASSISTANT.\"\n\nFrom your bedroom mirror steps yet another intruder: a broad-shouldersed man with fiery red hair. Faint with fear, you lean back against the wall. Woland greets the newcomer. "Ah, AZAZELLO!\"\n',
 
   tallManSpeaks : '\n\"That\'s them!\" cries the tall man in a goatish voice, referring to you in the plural for some reason. \"They\'ve been behaving disgustingly lately. Getting drunk, carrying on with women, trading on their position and not doing a stroke of work - not that they could do anything even if they tried because they\'re completely incompetent. Pulling the wool over the boss\'s eyes, that\'s what they\'ve been doing!\"\n\nOuch. Okay. You can feel yourself sweating at these accusations, though you cannot tell how this stranger would know any of this.\n',
 

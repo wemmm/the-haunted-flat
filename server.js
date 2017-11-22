@@ -1,5 +1,5 @@
 // === Server Flags ===
-var debugMode = true;
+var debugMode = false;
 
 // === Initilize Express ===
 var express = require('express');
@@ -14,18 +14,13 @@ app.use(express.static(__dirname + '/terminal'));
 app.use(session({secret: '1234567890QWERTY', resave: false, saveUninitialized: true}));
 
 // === Start Server ===
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
-var server = app.listen(server_port, server_ip_address, function () {
-  console.log( "Listening on " + server_ip_address + ", server_port " + server_port )
+const server = app.listen(process.env.PORT || 3000, function() {
+  const port = server.address().port;
+    console.log("Wonderful server is listening on port " + port);
 });
 
 // === Create Console ===
 var con = require('./console/console.js');
-
-// // === Open Browser ===
-var open = require('open');
-open('http://localhost:3000');
 
 // === Respond to AJAX calls ===
 app.post('/console', function(req,res){
