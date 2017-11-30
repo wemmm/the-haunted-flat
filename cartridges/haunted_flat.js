@@ -13,7 +13,6 @@ var gameData = {
 	map : {
 		'Bedroom' : {
 			firstVisit : true,
-			setup : function(){setups.demo();},
 			displayName : 'Your bedroom',
 			description : 'You are lying horizontally across your bed, and the room is dark. It\'s hard to see, but what little light there is glints on the surface of a full length MIRROR on the opposite wall. For starters, maybe you should GO over to it and take a look at yourself.\n',
 			interactables : {
