@@ -22,7 +22,7 @@
 
 ```
 
-## What is it now Jenny?
+## What is it now?
 
 This is a text-based adventure game that uses [TheBroox's](https://github.com/TheBroox) [Text Adventure](https://github.com/TheBroox/TextAdventure.js) engine.
 
